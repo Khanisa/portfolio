@@ -1,0 +1,864 @@
+@import "grid";
+@import "font";
+
+//variables
+
+@base-font-size: 1em;
+@base-line-height: 1.5em;
+@leading: @base-font-size * @base-line-height;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    cursor: pointer;
+    color: #B95353;
+}
+
+button {
+    display: block;
+    outline: none;
+}
+
+input {
+    display: block;
+    outline: none;
+}
+
+label {
+    display: block;
+}
+
+body {
+    font-family: "Open Sans";
+    background-color: #fafafa;
+    font-size: @base-font-size;
+    line-height: @base-line-height;
+    background-color: black;
+    color: white;
+}
+
+//helper class
+
+.boxing {
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.view:extend(.boxing) {
+    position: relative;
+    padding: 0 100% / 18;
+}
+
+.container:extend(.boxing) {
+    position: relative;
+    padding: 0 0.75em;
+}
+
+//modules
+
+.link {
+    cursor: pointer;
+}
+
+.icon {
+    width: @leading / 1.5;
+    height: @leading / 1.5;
+}
+
+//main-styles
+
+.top-nav {
+    position: relative;
+    width: 100%;
+    height: @leading * 2.5;
+    
+    .brand:extend(.container) {
+        position: relative;
+        opacity: 0.8;
+        left: 0;
+        font-family: "Anurati Regular";
+        font-size: 1.5em;
+        letter-spacing: .296em;
+        top: @leading / 1.5;
+        float: left;
+    }
+
+    .nav-links:extend(.container) {
+        position: relative;
+        top: @leading;
+        float: right;
+        
+        .link {
+            position: relative;
+            float: left;
+            margin-left: @leading;
+            
+        }
+
+        .twitter {
+            width: @leading / 1.5;
+            height: @leading / 1.5;
+            background: url(../icon/twitter.svg) center no-repeat;
+            background-size: cover;
+        }
+        
+        .twitter:hover {
+            background: url(../icon/twitter-color.svg) center no-repeat;
+            background-size: cover;
+        }
+
+        .linkedin {
+            width: @leading / 1.5;
+            height: @leading / 1.5;
+            background: url(../icon/linkedin.svg) center no-repeat;
+            background-size: cover;
+        }
+        
+        .linkedin:hover {
+            background: url(../icon/linkedin-color.svg) center no-repeat;
+            background-size: cover;
+        }
+
+        .ig {
+            width: @leading / 1.5;
+            height: @leading / 1.5;
+            background: url(../icon/instagram.svg) center no-repeat;
+            background-size: cover;
+        }
+
+        .ig:hover {
+            background: url(../icon/instagram-color.svg) center no-repeat;
+            background-size: cover;
+        }
+    }
+}
+
+.masthead {
+    position: relative;
+    padding-top: @leading * 4;
+    padding-bottom: @leading * 4;
+
+    .display-image {
+        position: relative;
+        top: @leading;
+        width: @leading * 18;
+        height: @leading * 18;
+        background: url(../images/a.JPG) center no-repeat;
+        margin-left: @leading * 2;
+        border-radius: 100%;
+        float: left;
+    }
+
+    .manifest:extend(.container) {
+        position: relative;
+        left: @leading * 3;
+        width: (100% / 8) * 4;
+        float: left;
+
+        .wrapper {
+            padding-top: @leading * 2.5;
+
+            .hello {
+                position: relative;
+                font-size: 1em;
+                font-weight: 300;
+                margin-bottom: @leading * 2.5;
+            }
+    
+            .name {
+                position: relative;
+                font-size: 5.063em;
+                font-weight: 400;
+                margin-bottom: @leading / 6;
+                
+                span {
+                    color: #B95353;
+                }
+            }
+    
+            .title {
+                position: relative;
+                font-variant: small-caps;
+                font-weight: 300;
+                font-size: 0.667em;
+                letter-spacing: .088em;
+                margin-bottom: @leading * 2;
+            }
+    
+            .descrip {
+                position: relative;
+                font-size: 1em;
+                font-weight: 300;
+                line-height: @leading;
+
+                span {
+                    position: relative;
+                    top: .444em;
+                    display: block;
+                    color: #B95353;
+                    font-weight: 500
+                }
+            }
+        }
+    }
+
+    .manifest::before {
+        content: "";
+        position: relative;
+        float: left;
+        right: @leading * 1.5;    
+        width: 0.088em;
+        height: @leading * 18;
+        background-color: #ffffff;
+        opacity: .2;
+    }
+}
+
+.project {
+    position: relative;
+    padding-top: @leading;
+    padding-bottom: @leading * 1.5;
+
+    .head {
+        position: relative;
+        font-size: 3.375em;
+        padding-top: @leading;
+        padding-bottom: @leading / 2;
+    }
+
+    .head::after {
+        content: "";
+        position: relative;
+        width: @leading;
+        height: .132em;
+        float: left;
+        top: @leading / 1.5;
+        left: @leading * 1.6;
+        background: #B95353;
+    }
+
+   .links-body:extend(.container) {
+       position: relative;
+       padding-top: @leading * 3;
+       padding-bottom: @leading * 4;
+
+       .links:extend(.boxing) {
+           position: relative;
+           width: (100% / 8) * 2;
+           margin-left: @leading * 9;
+           padding-top: @leading / 2;
+           padding-bottom: @leading / 2;
+           padding-left: @leading;
+           font-weight: 300;
+           float: left;
+
+           .link {
+               position: relative;
+               font-size: 2em;
+               margin-bottom: @leading;
+           }
+       }
+   }
+}
+
+.footer {
+    position: relative;
+    padding-top: @leading;
+    padding-bottom: @leading * 4;
+
+    .side-text:extend(.container) {
+        position: relative;
+        top: @leading * 1.5;        
+        float: left;
+        width: (100% / 8) * 3;
+        margin-left: @leading * 5;
+        .boxing;
+
+        .header {
+            position: relative;
+            font-size: 2.25em;
+            font-weight: 300;
+            margin-bottom: @leading / 6;
+        }
+
+        .small-text {
+            position: relative;
+            font-weight: 300;
+            font-size: 0.667em;
+        }
+    }
+
+    .lists:extend(.container) {
+        position: relative;
+        float: left;
+        width: (100% / 8) * 3;
+        .boxing;
+
+        .list {
+            position: relative;
+            padding-top: @leading / 3;
+            padding-bottom: @leading / 4;
+
+            .info {
+                font-size: 1em;
+                margin-left: @leading * 1.5;
+            }
+
+            .mail {
+                position: relative;
+                top: @leading / 4;
+                background: url("../icon/mail.svg") center no-repeat;
+                background-size: cover;
+                float: left;
+            }            
+
+            .phone {
+                position: relative;
+                top: @leading / 4;
+                background: url("../icon/call.svg") center no-repeat;
+                background-size: cover;
+                float: left;
+            }
+
+            .address {
+                position: relative;
+                top: @leading / 4;
+                background: url("../icon/house.svg") center no-repeat;
+                background-size: cover;
+                float: left;
+            }
+        }
+    }
+}
+
+//media queries//
+
+@media screen and (min-width: 320px) {
+    .icon {
+        width: @leading / 2;
+        height: @leading / 2;
+    }
+    .top-nav {
+        .brand {
+            font-size: 1em;
+        }
+
+        .nav-links {
+            .twitter, .linkedin, .ig {
+                width: @leading / 2.5;
+                height: @leading / 2.5;
+            }
+        }
+    }
+
+    .masthead {
+        padding-top: @leading / 6;
+        padding-bottom: @leading * 2;
+         
+        .display-image {
+            float: left;
+            width: @leading * 8;
+            height: @leading * 8;
+            background: url(../images/aa.png) center no-repeat;            
+            margin-left: @leading * 2.5;
+        }
+
+        .manifest {
+            width: 100%;
+            left: 0;
+            padding-top: @leading / 6;
+
+            .wrapper {
+                
+
+                .hello {
+                    font-size: .75em;
+                    text-align: center;
+                    margin-bottom: @leading * 1.5;
+                }
+
+                .name {
+                    font-size: 2.25em;
+                    text-align: center;
+                    margin-bottom: @leading / 10;
+                }
+                
+                .title {
+                    font-size: .5em;
+                    text-align: center;
+                }
+
+                .descrip {
+                    font-size: .667em;
+                    text-align: justify;
+                }
+            }            
+        }
+
+        .manifest::before {
+            display: none;
+        }
+    }
+
+    .project {
+        padding-top: @leading * 2;
+        padding-bottom: @leading;
+
+        .head {
+            font-size: 1.5em;
+            padding-top: @leading;
+            padding-bottom: @leading;
+        }
+
+        .links-body {
+            padding-top: @leading;
+            padding-bottom: @leading;
+
+
+            .links {
+                width: (100% / 4) * 2;
+                margin-left: @leading * 1.5;
+                float: left;
+
+                .link {
+                    font-size: .75em;
+                    margin-bottom: 1em;
+                }
+            }
+        }
+    }
+
+    .footer {
+        padding-top: @leading;
+        padding-bottom: @leading * 2;
+        
+        .side-text {
+            display: block;
+            width: 100%;
+            margin-left: 0;
+            top: @leading;
+            
+            .header {
+                font-size: 2em;
+                margin-bottom: 0;
+            }
+        }
+
+        .lists {
+            width: 100%;
+            padding-top: @leading * 3;
+
+            .list {
+                
+                .info {
+                    font-size: .75em;
+                    margin-left: @leading * 1.5;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 405px) {
+
+    .masthead {
+
+        .display-image {
+            margin-left: @leading * 3.5;
+        }
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .icon {
+        width: @leading / 1.5;
+        height: @leading / 1.5;
+    }
+
+    .top-nav {
+        .brand {
+            font-size: 1.25em;
+        }
+
+        .nav-links {
+            .twitter, .linkedin, .ig {
+                width: @leading / 2;
+                height: @leading / 2;
+            }
+        }
+    }
+
+    .masthead {
+        padding-top: @leading * 4;
+        padding-bottom: @leading * 4;
+    
+        .display-image {
+            top: @leading * 2;
+            width: @leading * 9;
+            height: @leading * 9;
+            margin-left: @leading;
+            float: left;
+        }
+    
+        .manifest:extend(.container) {
+            left: @leading;
+            width: (100% / 4) * 2.25;
+            float: left;
+    
+            .wrapper {
+                padding-top: @leading;
+                .hello {
+                    text-align: left;
+                    font-size: 0.85em;
+                    margin-bottom: @leading * 1.5;
+                }
+        
+                .name {
+                    text-align: left;
+                    font-size: 2.8em;
+                }
+        
+                .title {
+                    text-align: left;
+                    font-size: 0.667em;
+                }
+        
+                .descrip {
+                    font-size: 0.85em;
+                    line-height: @leading * 1.25;
+                }
+            }
+        }
+
+        .manifest::before {
+            content: "";
+            position: relative;
+            float: left;
+            display: block;
+            right: @leading / 1.5;    
+            width: 0.088em;
+            height: @leading * 13;
+            background-color: #ffffff;
+            opacity: .2;
+        }
+    }
+
+    .project {
+        padding-top: @leading * 3;
+        padding-bottom: @leading * 3;
+
+        .head {
+            font-size: 2.25em;
+            padding-top: @leading / 1.5;
+            padding-bottom: @leading / 1.5;
+        }
+    
+       .links-body {
+           padding-top: @leading * 3;
+           padding-bottom: @leading * 3;
+    
+           .header {
+                float: left;
+                font-size: 1em;
+                top: @leading * 3;
+           }
+    
+           .links {
+               float: left;
+               width: (100% / 4) * 1.5;
+               margin-left: @leading * 6;
+               padding-left: @leading;
+               font-size: .75em;
+
+               .link {
+                   font-size: 1.5em;
+                   margin-bottom: @leading;
+               }
+           }
+       }
+    }
+
+    .footer {
+        padding-top: @leading;
+        padding-bottom: @leading * 4;
+
+        .side-text {
+            top: @leading * 1.5;        
+            margin-left: @leading;
+            width: (100% / 4) * 2;
+            float: left;
+
+            .header {
+                font-size: 2.5em;
+            }
+
+            .small-text {
+                font-size: 0.667em;
+                margin-top: @leading / 6;
+            }
+        }
+
+        .lists {
+            top: @leading * 2;
+            float: left;
+            width: (100% / 4) * 1.5;
+            //margin-left: @leading;
+
+            .list {
+                padding-top: @leading / 2;
+                padding-bottom: @leading / 3;
+
+                .mail {
+                    float: left;
+                }            
+
+                .phone {
+                    float: left;
+                }
+
+                .address {
+                    float: left;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .icon {
+        width: @leading / 1.5;
+        height: @leading / 1.5;
+    }
+    .top-nav {
+        
+        .brand:extend(.container) {
+            font-size: 1.5em;
+        }
+    
+        .nav-links:extend(.container) {
+         
+            .twitter, .linkedin, .ig {
+                width: @leading / 1.5;
+                height: @leading / 1.5;
+            }
+        }
+    }
+    
+    .masthead {
+        padding-top: @leading * 4;
+        padding-bottom: @leading * 4;
+    
+        .display-image {
+            top: @leading;
+            width: @leading * 15;
+            height: @leading * 15;
+            background: url(../images/a.JPG) center no-repeat;
+            margin-left: @leading;
+            float: left;
+        }
+    
+        .manifest {
+            left: @leading * 2.5;
+            width: (100% / 8) * 4;
+            float: left;
+    
+            .wrapper {
+                padding-top: @leading * 2.5;
+    
+                .hello {
+                    font-size: 1em;
+                    margin-bottom: @leading * 2.5;
+                }
+        
+                .name {
+                    font-size: 4em;
+                }
+        
+                .title {
+                    font-size: 0.667em;
+                }
+        
+                .descrip {
+                    font-size: 1em;
+                    line-height: @leading;
+                }
+            }
+        }
+    
+        .manifest::before {
+            content: "";
+            position: relative;
+            float: left;
+            right: @leading;    
+            width: 0.088em;
+            height: @leading * 16;
+            background-color: #ffffff;
+            opacity: .2;
+        }
+    }
+    
+    .project {
+        padding-top: @leading;
+        padding-bottom: @leading;
+    
+        .head {
+            font-size: 3em;
+            padding-top: @leading;
+            padding-bottom: @leading;
+        }
+    
+       .links-body {
+           padding-top: @leading * 2.5;
+           padding-bottom: @leading * 3;
+    
+           .links {
+               width: (100% / 8) * 2;
+               margin-left: @leading * 9;
+
+               
+           }
+       }
+    }
+    
+    .footer {
+        .side-text {
+            top: @leading * 5;        
+            float: left;
+            width: (100% / 8) * 3;
+            margin-left: @leading * 5;
+    
+            .header {
+                font-size: 2.25em;
+                margin-bottom: @leading / 6;
+            }
+    
+            .small-text {
+                font-size: 0.75em;
+            }
+        }
+    
+        .lists {
+            top: @leading / 2;
+            float: left;
+            width: (100% / 8) * 3;
+    
+            .list {
+                padding-top: @leading / 3;
+                padding-bottom: @leading / 4;
+    
+                .info {
+                    font-size: 0.85em;
+                    margin-left: @leading * 1.5;
+                }
+            }
+        }
+    }
+    
+}
+
+@media screen and (min-width: 1300px){
+    .icon {
+        width: @leading / 1.5;
+        height: @leading / 1.5;
+    }  
+    .masthead {
+        
+        .display-image {
+            width: @leading * 18;
+            height: @leading * 18;
+            //top: @leading;
+            margin-left: @leading * 2;
+        }
+    
+        .manifest {
+            .wrapper {
+                .hello {
+                    font-size: 1em;
+                }
+        
+                .name {
+                    font-size: 5.063em;
+                    padding-bottom: @leading / 10;
+                }
+
+                .title {
+                    font-size: .75em;
+                }
+
+                .descrip {
+                    font-size: 1.1em;
+                }
+            }
+        }
+
+        .manifest::before {
+            height: @leading * 20;
+        }
+    }
+    
+    .project {
+        padding-bottom: @leading * 1.5;
+    
+        .head {
+            font-size: 3.375em;
+        }
+        
+        .links-body {
+            .header {
+                 font-size: 1.5em;
+                 top: @leading * 2;
+            }
+
+            .links {
+                margin-left: @leading * 9;
+
+                .link {
+                    font-size: 2em;
+                    margin-bottom: @leading;
+               }
+            }
+        }
+    }
+    
+    .footer {
+        .side-text {
+            top: @leading * 5;    
+    
+            .small-text {
+                font-size: 0.667em;
+            }
+        }
+    
+        .lists:extend(.container) {
+            width: (100% / 8) * 3;
+            top: @leading / 3;
+    
+            .list {
+    
+                .info {
+                    font-size: 1em;
+                }
+            }
+        }
+    } 
+}
